@@ -49,6 +49,7 @@ input{
     border: 1px solid rgb(161, 155, 155);
     text-align: center;
     padding: 5px;
+    min-width: 200px;
 }
 .res img{
     width: 90%;
