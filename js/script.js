@@ -13,7 +13,7 @@ $(function(){
             q: encodeURIComponent($('#search-text').val()).replace(/%20/g,'+'),
             order: 'viewCount',
             pageToken:page,
-            publishedAfter: dateAfter.toString("yyyy-MM-dd")+'T00:00:00Z'
+            publishedAfter: encodeURIComponent(dateAfter.toString("yyyy-MM-dd")+'T00:00:00Z').replace(/%20/g,'+')
         });
         request.execute(setData);
     }
