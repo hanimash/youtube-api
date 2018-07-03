@@ -5,6 +5,7 @@ header{
     align-content: space-between;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     border-bottom: 1px solid #444;
 }
 .logo{
@@ -27,14 +28,16 @@ input{
     padding: 20px;
 }
 #videoshow>object{
-    width: 800px;
-    height: 400px;
+    width: 95%;
+    max-width: 800px;
+    height: auto;
 }
 #resultBox{
     display: flex;
     align-content: space-between;
     justify-content: center;
     margin: 20px  auto;
+    flex-wrap: wrap;
 }
 .btnBox{
     text-align: center;
@@ -60,4 +63,10 @@ input{
 #nextBtn, #prevBtn{
     display: none;
     margin: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        background-color: lightblue;
+    }
 }
