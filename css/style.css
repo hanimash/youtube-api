@@ -1,0 +1,63 @@
+
+header{
+    padding: 10px;
+    display: flex;
+    align-content: space-between;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #444;
+}
+.logo{
+    height: 100px;
+}
+form{
+    display: inline-block;
+}
+input{
+    height: 30px;
+}
+#search-text{
+    display: inline-block;
+    width: 400px;
+    margin-right:10px;
+}
+
+#videoshow{
+    text-align: center;
+    padding: 20px;
+}
+#videoshow>object{
+    width: 800px;
+    height: 400px;
+}
+#resultBox{
+    display: flex;
+    align-content: space-between;
+    justify-content: center;
+    margin: 20px  auto;
+}
+.btnBox{
+    text-align: center;
+    width: 100%;
+}
+.res{
+    margin: 20px;
+    width: 16%;
+    border: 1px solid rgb(161, 155, 155);
+    text-align: center;
+    padding: 5px;
+}
+.res img{
+    width: 90%;
+}
+.res p{
+    text-align: justify;
+}
+.res small{
+    display: block;
+}
+
+#nextBtn, #prevBtn{
+    display: none;
+    margin: 10px;
+}
