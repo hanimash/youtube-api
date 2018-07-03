@@ -7,7 +7,7 @@ $(function(){
     });
     function getResult(page){
         var dateAfter=new Date($('#dateAfter').val());
-        let request=gapi.client.youtube.search.list({
+        var request=gapi.client.youtube.search.list({
             part: 'snippet',
             type: 'video',
             q: encodeURIComponent($('#search-text').val()).replace(/%20/g,'+'),
@@ -20,9 +20,9 @@ $(function(){
     function setData(result){
         if(result.items){
 
-            let $resultBox=$('#resultBox'),resHtml="",n=0;
-            for(let v of result.items){
-                let resDate=new Date(v.snippet.publishedAt);
+            var $resultBox=$('#resultBox'),resHtml="",n=0;
+            for(var v of result.items){
+                var resDate=new Date(v.snippet.publishedAt);
                 resHtml+=`
                     <div class="res">
                         <a href="https://www.youtube.com/watch?v=${v.id.videoId}" target="_blank"><img src="${v.snippet.thumbnails.medium.url}" alt=""></a>
@@ -36,7 +36,7 @@ $(function(){
             }
             $resultBox.html(resHtml);
             $('.res>button').click(function(){
-                let videoHtml=`
+                var videoHtml=`
                         <object  data="${$(this).data('src')}">
                         </object>
                     `;
