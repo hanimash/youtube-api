@@ -7,22 +7,22 @@ $(function(){
     });
     function getResult(page){
         var dateAfter=new Date($('#dateAfter').val());
-        var request=gapi.client.youtube.search.list({
+        let request=gapi.client.youtube.search.list({
             part: 'snippet',
             type: 'video',
             q: encodeURIComponent($('#search-text').val()).replace(/%20/g,'+'),
             order: 'viewCount',
             pageToken:page,
-            publishedAfter: encodeURIComponent(dateAfter.toString("yyyy-MM-dd")+'T00:00:00Z').replace(/%20/g,'+')
+            publishedAfter: dateAfter.toString("yyyy-MM-dd")+"T00:00:00Z"
         });
         request.execute(setData);
     }
     function setData(result){
         if(result.items){
 
-            var $resultBox=$('#resultBox'),resHtml="",n=0;
-            for(var v of result.items){
-                var resDate=new Date(v.snippet.publishedAt);
+            let $resultBox=$('#resultBox'),resHtml="",n=0;
+            for(let v of result.items){
+                let resDate=new Date(v.snippet.publishedAt);
                 resHtml+=`
                     <div class="res">
                         <a href="https://www.youtube.com/watch?v=${v.id.videoId}" target="_blank"><img src="${v.snippet.thumbnails.medium.url}" alt=""></a>
@@ -36,7 +36,7 @@ $(function(){
             }
             $resultBox.html(resHtml);
             $('.res>button').click(function(){
-                var videoHtml=`
+                let videoHtml=`
                         <object  data="${$(this).data('src')}">
                         </object>
                     `;
@@ -82,7 +82,7 @@ $(function(){
 });
 
 function init(){
-    const myKey='AIzaSyAN15m-Kwx1HVr0iVCeJT6_E_X88C-inIc';
+    const myKey='AIzaSyCD6_PnJUJWKdgUJ9uUF2Ho05dosKatcYA';
     gapi.client.setApiKey(myKey);
     gapi.client.load('youtube','v3',function(){});
 }
