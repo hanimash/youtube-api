@@ -82,7 +82,7 @@ $(function(){
 });
 
 function init(){
-    const myKey='AIzaSyCD6_PnJUJWKdgUJ9uUF2Ho05dosKatcYA';
+    const myKey='AIzaSyAN15m-Kwx1HVr0iVCeJT6_E_X88C-inIc';
     gapi.client.setApiKey(myKey);
     gapi.client.load('youtube','v3',function(){});
 }
