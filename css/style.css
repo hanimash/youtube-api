@@ -27,7 +27,7 @@ input{
 #videoshow>object{
     width: 95%;
     max-width: 800px;
-    height: auto;
+    min-height: 400px;
 }
 #resultBox{
     display: flex;
